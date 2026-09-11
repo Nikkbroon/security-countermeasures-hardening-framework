@@ -34,7 +34,8 @@ The framework considers:
 
 ## Fictional Infrastructure
 
-<img width="861" height="475" alt="Screenshot 2026-09-11 at 17 41 28" src="https://github.com/user-attachments/assets/fb63225e-c16e-457d-a0be-feff80ce54e1" />
+<img width="861" height="475" alt="Screenshot 2026-09-11 at 17 41 28" src="https://github.com/user-attachments/assets/ff1500d9-c380-4878-acf9-1775ce0db0fa" />
+
 
 
 The Aegis Research Network represents a mixed enterprise environment containing:
