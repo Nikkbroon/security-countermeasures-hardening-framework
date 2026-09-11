@@ -34,7 +34,7 @@ The framework considers:
 
 ## Fictional Infrastructure
 
-<img width="861" height="475" alt="Screenshot 2026-09-11 at 17 41 28" src="https://github.com/user-attachments/assets/ff1500d9-c380-4878-acf9-1775ce0db0fa" />
+<img width="2788" height="1536" alt="BrownSystemInfrastructure" src="https://github.com/user-attachments/assets/3dd0601b-dab3-4876-a386-f0b314e44e73" />
 
 
 
