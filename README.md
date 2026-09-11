@@ -1,12 +1,12 @@
-# Security Countermeasures & Infrastructure Hardening Framework
+# Brown System Architecture – Security Countermeasures & Hardening Framework
 
 ## Overview
 
 This project presents a security countermeasures and infrastructure hardening framework that I developed to demonstrate how defensive controls can be selected, evaluated and applied across a fictional enterprise environment.
 
-For this portfolio project, the environment is referred to as the Aegis Research Network.
+For this portfolio project, the environment is called the Brown System Architecture.
 
-The project considers security controls across Windows servers, Linux systems, desktop endpoints, public-facing web services, DNS infrastructure, proxy services and database systems.
+The Brown System Architecture represents a mixed enterprise environment containing Windows servers, Linux systems, desktop endpoints, public-facing web services, DNS infrastructure, proxy services and database systems.
 
 Rather than simply identifying individual security controls, the project considers their purpose, limitations and how they contribute to a layered defence strategy.
 
@@ -14,7 +14,7 @@ Rather than simply identifying individual security controls, the project conside
 
 ## Project Aim
 
-The aim of this project is to demonstrate how appropriate countermeasures can reduce the likelihood or impact of common attack techniques throughout a penetration testing lifecycle.
+The aim of this project is to demonstrate how appropriate security countermeasures can reduce the likelihood or impact of common attack techniques throughout a penetration testing lifecycle.
 
 The framework considers:
 
@@ -32,13 +32,12 @@ The framework considers:
 
 ---
 
-## Fictional Infrastructure
+## Brown System Architecture
 
-<img width="2788" height="1536" alt="BrownSystemInfrastructure" src="https://github.com/user-attachments/assets/3dd0601b-dab3-4876-a386-f0b314e44e73" />
+<img width="2788" height="1536" alt="BrownSystemInfrastructure" src="https://github.com/user-attachments/assets/a586c946-2b81-4bb3-af4e-9c63da4b9897" />
 
 
-
-The Aegis Research Network represents a mixed enterprise environment containing:
+The Brown System Architecture represents a fictional mixed enterprise network containing:
 
 - Windows Server domain controllers
 - Windows enterprise desktop systems
@@ -47,9 +46,10 @@ The Aegis Research Network represents a mixed enterprise environment containing:
 - DNS infrastructure
 - proxy services
 - database servers
-- internal and DMZ network segments
+- internal network segments
+- a DMZ
 
-The environment was designed to allow different defensive controls to be considered across multiple operating systems, services and attack scenarios.
+The architecture was developed to allow different defensive controls to be considered across multiple operating systems, services and attack scenarios.
 
 ---
 
@@ -59,7 +59,7 @@ The environment was designed to allow different defensive controls to be conside
 
 DNS zone transfers can provide valuable reconnaissance information, including hostnames, IP addresses and network structure.
 
-Restricting zone transfers to authorised DNS servers reduces unnecessary disclosure of infrastructure information.
+Restricting zone transfers within the Brown System Architecture to authorised DNS servers reduces unnecessary disclosure of infrastructure information.
 
 This does not prevent individual DNS queries or alternative reconnaissance techniques, so the control should form part of a wider layered defence strategy.
 
@@ -69,7 +69,7 @@ This does not prevent individual DNS queries or alternative reconnaissance techn
 
 ICMP echo requests can assist attackers with identifying active hosts during network reconnaissance.
 
-Restricting unnecessary ICMP responses can make straightforward host discovery more difficult.
+Restricting unnecessary ICMP responses within the Brown System Architecture can make straightforward host discovery more difficult.
 
 However, systems may still be discovered through TCP, UDP and alternative ICMP probes.
 
@@ -86,7 +86,7 @@ Strong password policies and appropriately configured account-lockout controls c
 Potential benefits include:
 
 - reducing repeated authentication attempts
-- increasing password complexity
+- increasing password strength
 - limiting automated password attacks
 - protecting privileged accounts
 
@@ -98,14 +98,14 @@ Account lockout must be configured carefully because overly aggressive settings 
 
 Multi-factor authentication provides additional protection when passwords are compromised.
 
-MFA is particularly valuable for:
+Within the Brown System Architecture, MFA would be particularly valuable for:
 
 - privileged accounts
 - administrative systems
 - remote administration
 - sensitive infrastructure
 
-It should not be treated as a complete defence because attackers may still exploit vulnerable services, steal active sessions or abuse other authentication mechanisms.
+MFA should not be treated as a complete defence because attackers may still exploit vulnerable services, steal authenticated sessions or abuse other authentication mechanisms.
 
 ---
 
@@ -163,7 +163,7 @@ Sandboxing is not a complete security boundary and should therefore complement o
 
 ## Secure TLS and HTTPS
 
-Public-facing applications should protect sensitive network communications using HTTPS and appropriately configured TLS.
+Public-facing applications within the Brown System Architecture should protect sensitive network communications using HTTPS and appropriately configured TLS.
 
 Secure TLS configuration helps protect:
 
@@ -201,7 +201,7 @@ Weak key management can undermine otherwise strong cryptographic systems.
 
 Domain Name System Security Extensions provide mechanisms for verifying the authenticity and integrity of DNS information.
 
-DNSSEC can help protect against attacks where forged DNS information is introduced into the name-resolution process.
+Within the Brown System Architecture, DNSSEC can help protect against attacks where forged DNS information is introduced into the name-resolution process.
 
 DNSSEC does not encrypt DNS traffic and requires appropriate key management and configuration.
 
@@ -213,7 +213,7 @@ Internet-facing authoritative DNS servers should not provide unrestricted recurs
 
 Separating authoritative and recursive DNS services reduces exposure and limits opportunities for DNS cache-related attacks.
 
-Internal recursive resolution can instead be restricted to trusted clients.
+Internal recursive resolution can instead be restricted to trusted clients within the Brown System Architecture.
 
 ---
 
@@ -255,7 +255,7 @@ Centralised logging is primarily a detective control, so effective alerting and 
 
 ## SQL Injection
 
-Applications should use parameterised queries or prepared statements rather than dynamically constructing SQL commands from user input.
+Applications within the Brown System Architecture should use parameterised queries or prepared statements rather than dynamically constructing SQL commands from user input.
 
 Separating user-supplied values from the SQL command structure reduces the likelihood that malicious input will be interpreted as executable SQL.
 
@@ -305,17 +305,15 @@ Controls should include:
 
 # Layered Defence
 
-One of the main conclusions from developing this project is that individual countermeasures rarely provide complete protection.
+One of the main conclusions from developing the Brown System Architecture security framework is that individual countermeasures rarely provide complete protection.
 
 For example:
 
-Password controls do not prevent exploitation of vulnerable software.
-
-MFA does not prevent every form of session compromise.
-
-TLS does not protect information once the server itself has been compromised.
-
-Egress filtering may not identify command-and-control traffic hidden within authorised protocols.
+- password controls do not prevent exploitation of vulnerable software
+- MFA does not prevent every form of session compromise
+- TLS does not protect information once a server has been compromised
+- egress filtering may not identify command-and-control traffic hidden within authorised protocols
+- patching cannot protect against every unknown or zero-day vulnerability
 
 Security controls are therefore most effective when combined as part of a defence-in-depth strategy.
 
@@ -323,7 +321,7 @@ Security controls are therefore most effective when combined as part of a defenc
 
 # Preventative and Detective Controls
 
-The framework includes both preventative and detective security measures.
+The Brown System Architecture framework includes both preventative and detective security measures.
 
 Preventative controls attempt to stop or limit an attack.
 
@@ -346,7 +344,7 @@ Examples include:
 - suspicious connection analysis
 - security alerting
 
-Combining both types of control provides stronger protection than relying exclusively on either approach.
+Combining preventative and detective controls provides stronger protection than relying exclusively on either approach.
 
 ---
 
@@ -383,7 +381,7 @@ This project demonstrates my understanding of:
 
 # Project Reflection
 
-Developing this project strengthened my understanding that identifying a security control is only part of defensive security.
+Developing the Brown System Architecture security framework strengthened my understanding that identifying a security control is only part of defensive security.
 
 A countermeasure must also be appropriate for the system being protected, realistically deployable and evaluated against the attack technique it is intended to mitigate.
 
@@ -395,4 +393,4 @@ The project reinforced the importance of defence in depth, where preventative, d
 
 It also strengthened my understanding of the relationship between penetration testing and defensive security.
 
-A penetration tester should not only be capable of identifying and exploiting weaknesses but should also understand how those weaknesses can be effectively mitigated and how recommended controls may affect the organisation operating them.
+A penetration tester should not only be capable of identifying and exploiting weaknesses but should also understand how those weaknesses can be effectively mitigated and how recommended security controls may affect the organisation operating them.
