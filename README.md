@@ -1,4 +1,4 @@
-# Brown System Architecture – Security Countermeasures & Hardening Framework
+#System Architecture – Security Countermeasures & Hardening Framework
 
 ## Overview
 
